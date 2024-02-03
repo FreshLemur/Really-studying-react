@@ -7,7 +7,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <App />
   </React.StrictMode>
 );
-/*
-Якщо видалити React.StrictMode, то все фактично працюватиме. Саме через нього додаток рендериться двічі.
-Це зроблино з міркувань налагодження, щоб все працювало краще.
-*/

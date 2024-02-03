@@ -1,23 +1,38 @@
-function Hello(props) {
-  console.log(props); // props це об'єкт.
+// 3 приклад деструктуризації.
+function Hello({ message, name, emoji }) {
   return (
     <div>
       <h1>
-        {props.message} {props.name}
+        {message} {name} {emoji}
       </h1>
-      {/* Достукування до властивості об'єкту. Виведе Hello, I`m Dmytro. */}
     </div>
   );
 }
 export default Hello;
 
+// 1 приклад, не деструктуризований.
 // function Hello(props) {
-//   console.log(props); // props це об'єкт.
 //   return (
 //     <div>
-//       <h1>Hello {props.name}</h1> {/* Достукування до властивості об'єкту. */}
-//       </div>
-//       );
-//     }
-//     export default Hello;
-// Це те, як можна зробити, цей компонент вже є динамічним, проте не повністю.
+//       <h1>
+//         {props.message} {props.name}
+//       </h1>
+//       {/* Достукування до властивості об'єкту. Виведе Hello, I`m Dmytro. */}
+//     </div>
+//   );
+// }
+// export default Hello;з
+// Можна ось так використовувати.
+
+// 2 приклад, вже деструктуризований, проте ще не найкраща деструктуризація.
+// function Hello(props) {
+//   const { message, name } = props;
+//   return (
+//     <div>
+//       <h1>
+//         {message} {name}
+//       </h1>
+//     </div>
+//   );
+// }
+// export default Hello;
