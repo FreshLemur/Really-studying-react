@@ -2,36 +2,27 @@ import Code from "./Code";
 import Welcome from "./Welcome";
 
 export default function Conditional() {
-  const display = false;
+  const display = true;
+  const messageOne = <h1>Text 1</h1>;
+  const messageTwo = <h1>Text 2</h1>;
+  let message;
   if (display) {
-    return <Welcome />;
+    message = messageOne;
   } else {
-    return <Code />;
+    message = messageTwo;
   }
+  return message;
 }
-
-// В даному прикладі ми рендеримо компонент Welcome, якщо умова справджується і рендеримо Code, якщо не справджується.
+// А ось цей варіант прекрасно виконує те, що ми хотіли зробити. Тепер ми використовуємо лише 1 return.
 
 // export default function Conditional() {
-//   const display = true;
-//   if (display) {
-//     return (
-//       <div>
-//         <h3>This is a conditional component</h3>
-//       </div>
-//     );
-//   } else {
-//     return (
-//       <div>
-//         <h3>Code everyday</h3>
-//       </div>
-//     );
+//     const display = false;
+//     const messageOne = <h1>Text 1</h1>;
+//     const messageTwo = <h1>Text 2</h1>;
+//     if (display) {
+//       return messageOne;
+//     } else {
+//       return messageTwo;
+//     }
 //   }
-// }
-// Ми навчилися створювати компоненти та як їх рендерити, але ми не навчилися умовно рендерити компонент залежно від
-// заданої умови.
-
-// Як ми можемо умовно рендерити певні JSX елементи?
-// Ми створили просту умову. Якщо display = true, виводиться блок if, якщо dipslay = false, виводиться блок else.
-
-// Це був приклад, як умовно відобразити JSX.
+// Цей варіант вже дуже схожий на те, чого ми хочемо добитися. Проте ми досі використовуємо 2 return.
