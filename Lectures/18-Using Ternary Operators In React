@@ -1,0 +1,10 @@
+В цій лекції буде використання тернарних операторів.
+
+Пояснення і як він виглядає:
+let isHappy = true;
+let Happy = isHappy ? "I am happy" : "I am not happy";
+? - try; : - else.
+Тобто змінна Happy перевіряє чи isHappy = true. Якщо true, то спрацьовує умова I am happy, за яку відповідає ?,
+якщо isHappy = false, то спрацьовує : і виводиться I am not happy.
+
+Увагу слід звертати на App.jsx, Conditional.jsx, а також Welcome.jsx з Code.jsx
