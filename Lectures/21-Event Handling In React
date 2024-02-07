@@ -1,0 +1,31 @@
+В цій лекції ми дізнаємося, як обробляти події в компонентах React.
+
+Увагу слід звертати на App.jsx та Message.jsx.
+
+App.jsx:
+import Message from "./components/Message";
+
+function App() {
+  return (
+    <div className="App">
+      <Message />
+    </div>
+  );
+}
+
+export default App;
+
+
+
+Message.jsx:
+export default function Message() {
+  const clicked = () => {
+    console.log("You are clicked on button");
+  };
+  return (
+    <div>
+      <button onClick={clicked}>Click here to get a message</button>
+    </div>
+  );
+}
+// Ось дуже простий приклад використання події. При кліку в консоль виведеться повідомлення.
