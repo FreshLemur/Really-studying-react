@@ -3,47 +3,46 @@ import { useState } from "react";
 export default function Counter() {
   const [count, setCount] = useState(0);
   const increment = () => {
-    setCount(count + 1);
+    setCount(count + incrementBy);
   };
   const decrement = () => {
-    setCount(count - 1);
+    setCount(count - incrementBy);
   };
-  const backToZero = () => {
-    setCount(0);
+  const multiplication = () => {
+    setCount(count * incrementBy);
+  };
+  const division = () => {
+    setCount(count / incrementBy);
+  };
+
+  const [incrementBy, setIncrementBy] = useState(1);
+
+  const increaseIncrement = () => {
+    setIncrementBy(incrementBy + 1);
+  };
+  const decreaseIncrement = () => {
+    setIncrementBy(incrementBy - 1);
   };
   return (
     <div>
       <h1>Count value is: {count} </h1>
+
       <button onClick={increment}>Increment</button>
       <br />
       <button onClick={decrement}>Decrement</button>
       <br />
-      <button onClick={backToZero}>Back to zero</button>
+      <button onClick={multiplication}>Multiplication</button>
+      <br />
+      <button onClick={division}>Division</button>
+
+      <h1>We are incrementing the value by: {incrementBy}</h1>
+      <button onClick={increaseIncrement}>increaseIncrement</button>
+      <br />
+      <button onClick={decreaseIncrement}>decreaseIncrement</button>
     </div>
   );
 }
-
-// increment +
-// decrement -
-// backToZero 0
-
-// const increment = () => {
-//     setCount(count + 1);
-//   };
-// Фактично, setCount встановлює значення для count. Те, що ми передамо сюди буде значенням змінної count.
-//      Отже, ми передали count + 1 і збільшили значення count на 1.
-
-// {count} має значення змінної count. Воно за замовчуванням = 0 через useState(0).
-//      Прийнято оголошувати стан компоненту його початку.
-
-// export default function Counter() {
-//     const [count, setCount] = useState(0);
-//     return <div>Count value is: </div>;
-//   }
-// const [count, setCount] = useState();
-//      use state hook - використання гаку стану.
-//      В змінній нам потрібно визначити дві речі. Перше - змінна стану (count).
-//      Друге - спеціальна функція, яка встановлюватиме значення для першої змінної (setCount).
-//      Ми не можемо просто напряму прописати count++, потрібна функція.
-//      Також ми можемо встановити початкове значення count, прописуючи useState(0).
-//      Таким чино, count === 0.
+// Отже, пояснення як це працює.
+// Сенс цього коду в тому, щоб показати можливість декілька станів в React.
+// incrementBy це значення, на яке будуть виконуватися певні математичні дії.
+// Це майже простенький калькулятор, який може додавати, віднімати, множити і ділити завдяки 2 стану - incrementBy.
