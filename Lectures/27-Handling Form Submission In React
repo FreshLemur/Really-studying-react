@@ -1,3 +1,11 @@
+У цій лекції ми дізнаємося, як обробляти надсилання форм у React.
+
+Коли кнопка знаходиться всередині form і оновлює сторінку, то при відправленні цих даних, дані всередині стану втрачаються.
+Значить, нам потрібно запобігти оновленню сторінки.
+
+Основні файли: Form.jsx та App.jsx.
+
+Form.jsx: 
 import { useState } from "react";
 
 export default function Form() {
@@ -30,3 +38,19 @@ export default function Form() {
 // Тому ми використовуємо атрибут onClick, викликаємо функцію handleSubmit і всередині неї є метож preventDefault()
 // Фактично він запобігає звичайній поведінці btn і вона більше не оновлює сторінку.
 // Для того, щоб впевнитися, що дані насправді надсилаються прописано console.log.
+
+
+
+
+App.jsx:
+import Form from "./components/Form";
+
+function App() {
+  return (
+    <div className="App">
+      <Form />
+    </div>
+  );
+}
+
+export default App;
