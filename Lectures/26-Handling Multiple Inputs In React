@@ -1,3 +1,7 @@
+У цій лекції ми дізнаємося як обробляти кілька інпутів.
+Основну увагу потрібно звертати на Form.jsx та App.jsx.
+
+Form.jsx:
 import { useState } from "react";
 
 export default function Form() {
@@ -150,3 +154,18 @@ export default function Form() {
 //   );
 // }
 // Отже. Це мій код, який я створил слухаючи його пояснення. Проте в нього є інший приклад, тому треба дивитися і на його, а потім порівняти.
+
+
+
+App.jsx:
+import Form from "./components/Form";
+
+function App() {
+  return (
+    <div className="App">
+      <Form />
+    </div>
+  );
+}
+
+export default App;
